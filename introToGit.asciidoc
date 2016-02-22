@@ -116,14 +116,14 @@ http://stackoverflow.com/questions/1408450/why-should-i-use-version-control
   ** configuration files
   ** assets
 
-== Version Control - Just for source code?
+=== Version Control - Just for source code?
 
 * In fact, this presentation is in git, hosted on github
 * hosted at: http://shearer12345.github.io/softwareEngineering
 * source at: https://github.com/shearer12345/softwareEngineering
 
 
-=== Version Control - Issues with non-text content?
+== Version Control - Issues with non-text content?
 
 * version control systems store changes to files efficiently
 * by *"diff'ing"* the files
@@ -140,6 +140,9 @@ http://stackoverflow.com/questions/1408450/why-should-i-use-version-control
 * add
 * commit
 * branch
+
+=== Actions in Version Control 2
+
 * tag
 * checkout
 * merge
@@ -155,9 +158,10 @@ http://stackoverflow.com/questions/1408450/why-should-i-use-version-control
 * in the *current* directory
 * http://git-scm.com/docs/git-init
 
-code,bash-------- code,bash
+[source ,bash]
+----
 git init
---------
+----
 
 === status
 
@@ -169,9 +173,10 @@ file
 * paths in the working tree that are not tracked by Git
 * http://git-scm.com/docs/git-status
 
-code,bash---------- code,bash
+[source ,bash]
+----
 git status
-----------
+----
 
 === add
 
@@ -179,21 +184,26 @@ git status
 to prepare the content staged for the next commit
 * http://git-scm.com/docs/git-add
 
-code,bash---------------- code,bash
+[source ,bash]
+----
 git add FILENAME
-----------------
+----
 
-code,bash--------------------------- code,bash
+[source ,bash]
+----
 git add FILENAME1 FILENAME2
----------------------------
+----
 
-code,bash----------------- code,bash
+=== add 2
+[source ,bash]
+----
 git add FILENAME*
------------------
+----
 
-code,bash------------- code,bash
+[source ,bash]
+----
 git add *.png
--------------
+----
 
 
 === commit
@@ -203,19 +213,21 @@ git add *.png
 log message from the user describing the changes
 * http://git-scm.com/docs/git-commit
 
-code,bash----------------------------------------------- code,bash
+[source ,bash]
+----
 git commit #will then prompt for commit message
------------------------------------------------
+----
 
-code,bash------------------------------------------ code,bash
+[source ,bash]
+----
 git commit -m "this is the commit message"
-------------------------------------------
+----
 
-code,bash----------------------------------------------------------------------------
-code,bash
+[source ,bash]
+----
 git commit -a #automatically stage files that have been modified and deleted
 #but new files you have not told Git about are not affected.
-----------------------------------------------------------------------------
+----
 
 
 === branch
@@ -223,21 +235,25 @@ git commit -a #automatically stage files that have been modified and deleted
 * List, create, or delete branches
 * http://git-scm.com/docs/git-branch
 
-code,bash-------------------------------- code,bash
+[source ,bash]
+----
 git branch NewBranchName #create
---------------------------------
+----
 
-code,bash---------------------------------- code,bash
+[source ,bash]
+----
 git branch -l #list local branches
-----------------------------------
+----
 
-code,bash----------------------------------- code,bash
+[source ,bash]
+----
 git branch -r #list remote branches
------------------------------------
+----
 
-code,bash--------------------------------------------- code,bash
+[source ,bash]
+----
 git branch -d BranchToDelete #delete a branch
----------------------------------------------
+----
 
 
 === tag
@@ -245,30 +261,35 @@ git branch -d BranchToDelete #delete a branch
 * Create, list, delete or verify a tag object signed with GPG
 * http://git-scm.com/docs/git-tag
 
-code,bash------------------ code,bash
+[source ,bash]
+----
 git tag NewTagName
-------------------
+----
 
-code,bash-------------------------- code,bash
+[source ,bash]
+----
 git tag -d TagNameToDelete
---------------------------
+----
 
 === checkout
 
 * Checkout a branch or paths to the working tree
 * http://git-scm.com/docs/git-checkout
 
-code,bash----------------------------- code,bash
+[source ,bash]
+----
 git checkout BranchToCheckout
------------------------------
+----
 
-code,bash-------------------------- code,bash
+[source ,bash]
+----
 git checkout TagToCheckout
---------------------------
+----
 
-code,bash-------------------------------------------- code,bash
+[source ,bash]
+----
 git checkout -b NewBranchToCreateAndCheckout
---------------------------------------------
+----
 
 
 === merge
@@ -277,9 +298,10 @@ git checkout -b NewBranchToCreateAndCheckout
 * http://git-scm.com/docs/git-merge
 * may lead to merge conflicts
 
-code,bash---------------------------------------------------- code,bash
+[source ,bash]
+----
 git merge BranchX #Merge BranchX into present branch
-----------------------------------------------------
+----
 
 
 === clone
@@ -288,19 +310,19 @@ git merge BranchX #Merge BranchX into present branch
 * http://git-scm.com/docs/git-clone
 * automatically sets up the `remote`
 
-code,bash-----------------------------------------------------------------
-code,bash
-git clone https://github.com/shearer12345/softwareEngineering.git
+[source ,bash]
+----
+git clone https://github.com/shearer12345/introToGit.git
   #clone this lecture
-  #will get the content, but not the submodule for reveal.js
+  #will get the content, but not the submodules
   #so won't work as a presentation
------------------------------------------------------------------
+----
 
-code,bash-----------------------------------------------------------------------------
-code,bash
-git clone --recursive https://github.com/shearer12345/softwareEngineering.git
+[source ,bash]
+----
+git clone --recursive https://github.com/shearer12345/introToGit.git
   #clone this lecture, clone submodules also
------------------------------------------------------------------------------
+----
 
 
 === pull
@@ -312,13 +334,15 @@ git clone --recursive https://github.com/shearer12345/softwareEngineering.git
 ** `git fetch`
 ** followed by `git merge FETCH_HEAD`
 
-code,bash-------- code,bash
+[source ,bash]
+----
 git pull
---------
+----
 
-code,bash--------------------------------------------------- code,bash
+[source ,bash]
+----
 git pull origin #pull from the remote called origin
----------------------------------------------------
+----
 
 
 === push
@@ -326,14 +350,16 @@ git pull origin #pull from the remote called origin
 * Update remote refs along with associated objects
 * http://git-scm.com/docs/git-push
 
-code,bash-------- code,bash
+[source ,bash]
+----
 git push
---------
+----
 
-code,bash------------------------------------------------- code,bash
+[source ,bash]
+----
 git push origin #push to the remote called origin
   #will need enough rights for this
--------------------------------------------------
+----
 
 
 == When to commit?
