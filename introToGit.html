@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Introduction to Git</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="reveal.js/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme"><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet"><script>document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section><h1>Introduction to Git</h1><p><small></small></p></section><section><section id="_software_versioning_what_is_it"><h2>Software Versioning - What is it?</h2><div class="ulist"><ul><li><p>AKA:</p><div class="ulist"><ul><li><p>revision control</p></li><li><p>version control</p></li><li><p>source control</p></li></ul></div></li></ul></div></section><section id="_software_versioning_what_is_it_2"><h2>Software Versioning - What is it? 2</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Management of changes to documents, computer programs, large web sites,
+and other collections of information</p></div></blockquote><div class="attribution">&#8212; http://en.wikipedia.org/wiki/Revision_control</div></div></section></section>
+<section id="_features"><h2>Features</h2><div class="ulist"><ul><li><p>each revision is associated with a timestamp</p></li><li><p>each revision is associated with the person making the change</p></li><li><p>revisions can be <strong>compared</strong> (diff), <strong>restored</strong></p></li><li><p>revisions can be <strong>merged</strong> (for some file types, e.g. text files)</p></li></ul></div></section>
+<section><section id="_software_versioning_why_do_it"><h2>Software Versioning - Why do it?</h2><div class="ulist"><ul><li><p>Have you ever:</p></li><li><p>Made a change to code, realised it was a <strong>mistake</strong> and wanted to
+revert back?</p></li><li><p><strong>Lost code</strong> or had a backup that was too old?</p></li><li><p>Had to maintain <strong>multiple versions</strong> of a product?</p></li></ul></div></section><section id="_software_versioning_why_do_it_2"><h2>Software Versioning - Why do it? 2</h2><div class="ulist"><ul><li><p>Wanted to see the <strong>difference</strong> between two (or more) versions of your
+code?</p></li><li><p>Wanted to prove that a <strong>particular change broke or fixed a piece of
+code</strong>?</p></li><li><p>Wanted to review the <strong>history</strong> of some code?</p></li></ul></div></section><section id="_software_versioning_why_do_it_3"><h2>Software Versioning - Why do it? 3</h2><div class="ulist"><ul><li><p>Wanted to <strong>submit a change to someone else&#8217;s code</strong>?</p></li><li><p>Wanted to <strong>share your code</strong>, or let other people work on your code?</p></li><li><p>Wanted to see <strong>how much work</strong> is being done, and <strong>where</strong>, <strong>when</strong> and
+by <strong>whom</strong>?</p></li><li><p>Wanted to experiment with a <strong>new feature without interfering</strong> with
+working code?</p></li></ul></div>
+<div class="paragraph"><p><a href="http://stackoverflow.com/questions/1408450/why-should-i-use-version-control" class="bare">http://stackoverflow.com/questions/1408450/why-should-i-use-version-control</a></p></div></section></section>
+<section><section id="_software_versioning_distributed_version_control_tools"><h2>Software Versioning - Distributed Version Control Tools</h2><div class="ulist"><ul><li><p>Git (our focus)</p></li><li><p>Mecurial</p></li></ul></div></section><section id="_software_versioning_centralised_version_control_tools"><h2>Software Versioning - Centralised Version Control Tools</h2><div class="ulist"><ul><li><p>Microsoft Visual SourceSafe (VSS)</p></li><li><p>Subversion</p></li><li><p>CVS</p></li></ul></div></section><section id="_software_versioning_omg_tools"><h2>Software Versioning - OMG!!! Tools</h2><div class="ulist"><ul><li><p>manually</p></li><li><p>Dropbox or similar</p></li></ul></div></section></section>
+<section id="_software_versioning_more_tools"><h2>Software Versioning - More Tools</h2><div class="ulist"><ul><li><p>Visual Studio has plugins</p></li><li><p>Eclipse has plugins</p></li><li><p>XCode has plugins</p></li><li><p>Git Shell</p></li><li><p>Github for Windows (installs Git Shell)</p></li><li><p>Ungit (we&#8217;ll look at this today)</p></li></ul></div></section>
+<section><section id="_software_versioning_web_support_hosting_git"><h2>Software Versioning - Web support/hosting (git)</h2><div class="ulist"><ul><li><p>Github (we&#8217;ll look at this today)</p><div class="ulist"><ul><li><p>github.com</p></li></ul></div></li><li><p>BitBucket</p><div class="ulist"><ul><li><p>bitbucket.com</p></li></ul></div></li><li><p>GitLab (open source, host yourself, or hosted)</p><div class="ulist"><ul><li><p>gitlab.com</p></li></ul></div></li><li><p>Atlassian</p><div class="ulist"><ul><li><p>&#8230;&#8203;</p></li></ul></div></li></ul></div></section><section id="_hosted_tools_extra_features"><h2>Hosted tools - extra features</h2><div class="ulist"><ul><li><p>hosted tools may have extra features, beyond just pure versioning. e.g.</p><div class="ulist"><ul><li><p>issue tracking (with integration with versioning)</p></li><li><p>forums</p></li><li><p>real-time chat</p></li><li><p>wiki</p></li><li><p>code review</p></li><li><p>team management</p></li><li><p>continuous integration</p></li></ul></div></li></ul></div></section></section>
+<section id="_github_student_developer_pack"><h2>GitHub Student Developer Pack</h2><div class="ulist"><ul><li><p><a href="https://education.github.com/pack" class="bare">https://education.github.com/pack</a></p></li><li><p>five private repositories while you&#8217;re a student</p></li><li><p>and bunch of other tools</p></li></ul></div></section>
+<section id="_version_control_just_for_source_code"><h2>Version Control - Just for source code?</h2><div class="ulist"><ul><li><p><strong>NO</strong></p></li><li><p>also:</p><div class="ulist"><ul><li><p>documentation</p></li><li><p>configuration files</p></li><li><p>assets</p></li></ul></div></li></ul></div></section>
+<section><section id="_version_control_just_for_source_code_2"><h2>Version Control - Just for source code?</h2><div class="ulist"><ul><li><p>In fact, this presentation is in git, hosted on github</p></li><li><p>hosted at: <a href="http://shearer12345.github.io/softwareEngineering" class="bare">http://shearer12345.github.io/softwareEngineering</a></p></li><li><p>source at: <a href="https://github.com/shearer12345/softwareEngineering" class="bare">https://github.com/shearer12345/softwareEngineering</a></p></li></ul></div></section><section id="_version_control_issues_with_non_text_content"><h2>Version Control - Issues with non-text content?</h2><div class="ulist"><ul><li><p>version control systems store changes to files efficiently</p></li><li><p>by <strong>"diff&#8217;ing"</strong> the files</p></li><li><p>finding what&#8217;s changed between one and another</p></li><li><p>very effective for text files</p></li><li><p>arbitrarily hard for binary file types</p></li><li><p>e.g. images</p></li></ul></div></section></section>
+<section><section id="_actions_in_version_control"><h2>Actions in Version Control</h2><div class="ulist"><ul><li><p>initialisation</p></li><li><p>status</p></li><li><p>add</p></li><li><p>commit</p></li><li><p>branch</p></li><li><p>tag</p></li><li><p>checkout</p></li><li><p>merge</p></li><li><p>clone</p></li><li><p>pull</p></li><li><p>push</p></li></ul></div></section><section id="_initialisation"><h2>initialisation</h2><div class="ulist"><ul><li><p>Create an empty Git repository or reinitialize an existing one</p></li><li><p>in the <strong>current</strong> directory</p></li><li><p><a href="http://git-scm.com/docs/git-init" class="bare">http://git-scm.com/docs/git-init</a></p></li></ul></div>
+<div class="paragraph"><p>code,bash-------- code,bash
+git init</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>=== status
+
+* Show the working tree status
+* displays paths that have differences between the index file and the
+current HEAD commit
+* paths that have differences between the working tree and the index
+file
+* paths in the working tree that are not tracked by Git
+* http://git-scm.com/docs/git-status
+
+code,bash---------- code,bash
+git status
+----------
+
+=== add
+
+* updates the index using the current content found in the working tree,
+to prepare the content staged for the next commit
+* http://git-scm.com/docs/git-add
+
+code,bash---------------- code,bash
+git add FILENAME
+----------------
+
+code,bash--------------------------- code,bash
+git add FILENAME1 FILENAME2
+---------------------------
+
+code,bash----------------- code,bash
+git add FILENAME*
+-----------------
+
+code,bash------------- code,bash
+git add *.png
+-------------
+
+
+=== commit
+
+* Record changes to the repository
+* Stores the current contents of the index in a new commit along with a
+log message from the user describing the changes
+* http://git-scm.com/docs/git-commit
+
+code,bash----------------------------------------------- code,bash
+git commit #will then prompt for commit message
+-----------------------------------------------
+
+code,bash------------------------------------------ code,bash
+git commit -m "this is the commit message"
+------------------------------------------
+
+code,bash----------------------------------------------------------------------------
+code,bash
+git commit -a #automatically stage files that have been modified and deleted
+#but new files you have not told Git about are not affected.
+----------------------------------------------------------------------------
+
+
+=== branch
+
+* List, create, or delete branches
+* http://git-scm.com/docs/git-branch
+
+code,bash-------------------------------- code,bash
+git branch NewBranchName #create
+--------------------------------
+
+code,bash---------------------------------- code,bash
+git branch -l #list local branches
+----------------------------------
+
+code,bash----------------------------------- code,bash
+git branch -r #list remote branches
+-----------------------------------
+
+code,bash--------------------------------------------- code,bash
+git branch -d BranchToDelete #delete a branch
+---------------------------------------------
+
+
+=== tag
+
+* Create, list, delete or verify a tag object signed with GPG
+* http://git-scm.com/docs/git-tag
+
+code,bash------------------ code,bash
+git tag NewTagName
+------------------
+
+code,bash-------------------------- code,bash
+git tag -d TagNameToDelete
+--------------------------
+
+=== checkout
+
+* Checkout a branch or paths to the working tree
+* http://git-scm.com/docs/git-checkout
+
+code,bash----------------------------- code,bash
+git checkout BranchToCheckout
+-----------------------------
+
+code,bash-------------------------- code,bash
+git checkout TagToCheckout
+--------------------------
+
+code,bash-------------------------------------------- code,bash
+git checkout -b NewBranchToCreateAndCheckout
+--------------------------------------------
+
+
+=== merge
+
+* Join two or more development histories together
+* http://git-scm.com/docs/git-merge
+* may lead to merge conflicts
+
+code,bash---------------------------------------------------- code,bash
+git merge BranchX #Merge BranchX into present branch
+----------------------------------------------------
+
+
+=== clone
+
+* Clone a repository into a new directory
+* http://git-scm.com/docs/git-clone
+* automatically sets up the `remote`
+
+code,bash-----------------------------------------------------------------
+code,bash
+git clone https://github.com/shearer12345/softwareEngineering.git
+  #clone this lecture
+  #will get the content, but not the submodule for reveal.js
+  #so won't work as a presentation
+-----------------------------------------------------------------
+
+code,bash-----------------------------------------------------------------------------
+code,bash
+git clone --recursive https://github.com/shearer12345/softwareEngineering.git
+  #clone this lecture, clone submodules also
+-----------------------------------------------------------------------------
+
+
+=== pull
+
+* Fetch from and integrate with another repository or a local branch
+* http://git-scm.com/docs/git-pull
+* incorporates changes from a remote repository into the current branch
+* in default mode, git pull is shorthand for
+** `git fetch`
+** followed by `git merge FETCH_HEAD`
+
+code,bash-------- code,bash
+git pull</code></pre></div></div>
+<div class="paragraph"><p>code,bash--------------------------------------------------- code,bash
+git pull origin #pull from the remote called origin</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>=== push
+
+* Update remote refs along with associated objects
+* http://git-scm.com/docs/git-push
+
+code,bash-------- code,bash
+git push
+--------
+
+code,bash------------------------------------------------- code,bash
+git push origin #push to the remote called origin
+  #will need enough rights for this
+-------------------------------------------------
+
+
+== When to commit?
+
+* commit often
+* commit after reaching some logical milestone
+* commit at least everyday
+* or better, break up your work into smaller chunks
+
+
+== Live Demo</code></pre></div></div></section></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: false,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>
