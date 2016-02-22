@@ -12,192 +12,45 @@ working code?</p></li></ul></div>
 <section id="_software_versioning_more_tools"><h2>Software Versioning - More Tools</h2><div class="ulist"><ul><li><p>Visual Studio has plugins</p></li><li><p>Eclipse has plugins</p></li><li><p>XCode has plugins</p></li><li><p>Git Shell</p></li><li><p>Github for Windows (installs Git Shell)</p></li><li><p>Ungit (we&#8217;ll look at this today)</p></li></ul></div></section>
 <section><section id="_software_versioning_web_support_hosting_git"><h2>Software Versioning - Web support/hosting (git)</h2><div class="ulist"><ul><li><p>Github (we&#8217;ll look at this today)</p><div class="ulist"><ul><li><p>github.com</p></li></ul></div></li><li><p>BitBucket</p><div class="ulist"><ul><li><p>bitbucket.com</p></li></ul></div></li><li><p>GitLab (open source, host yourself, or hosted)</p><div class="ulist"><ul><li><p>gitlab.com</p></li></ul></div></li><li><p>Atlassian</p><div class="ulist"><ul><li><p>&#8230;&#8203;</p></li></ul></div></li></ul></div></section><section id="_hosted_tools_extra_features"><h2>Hosted tools - extra features</h2><div class="ulist"><ul><li><p>hosted tools may have extra features, beyond just pure versioning. e.g.</p><div class="ulist"><ul><li><p>issue tracking (with integration with versioning)</p></li><li><p>forums</p></li><li><p>real-time chat</p></li><li><p>wiki</p></li><li><p>code review</p></li><li><p>team management</p></li><li><p>continuous integration</p></li></ul></div></li></ul></div></section></section>
 <section id="_github_student_developer_pack"><h2>GitHub Student Developer Pack</h2><div class="ulist"><ul><li><p><a href="https://education.github.com/pack" class="bare">https://education.github.com/pack</a></p></li><li><p>five private repositories while you&#8217;re a student</p></li><li><p>and bunch of other tools</p></li></ul></div></section>
-<section id="_version_control_just_for_source_code"><h2>Version Control - Just for source code?</h2><div class="ulist"><ul><li><p><strong>NO</strong></p></li><li><p>also:</p><div class="ulist"><ul><li><p>documentation</p></li><li><p>configuration files</p></li><li><p>assets</p></li></ul></div></li></ul></div></section>
-<section><section id="_version_control_just_for_source_code_2"><h2>Version Control - Just for source code?</h2><div class="ulist"><ul><li><p>In fact, this presentation is in git, hosted on github</p></li><li><p>hosted at: <a href="http://shearer12345.github.io/softwareEngineering" class="bare">http://shearer12345.github.io/softwareEngineering</a></p></li><li><p>source at: <a href="https://github.com/shearer12345/softwareEngineering" class="bare">https://github.com/shearer12345/softwareEngineering</a></p></li></ul></div></section><section id="_version_control_issues_with_non_text_content"><h2>Version Control - Issues with non-text content?</h2><div class="ulist"><ul><li><p>version control systems store changes to files efficiently</p></li><li><p>by <strong>"diff&#8217;ing"</strong> the files</p></li><li><p>finding what&#8217;s changed between one and another</p></li><li><p>very effective for text files</p></li><li><p>arbitrarily hard for binary file types</p></li><li><p>e.g. images</p></li></ul></div></section></section>
-<section><section id="_actions_in_version_control"><h2>Actions in Version Control</h2><div class="ulist"><ul><li><p>initialisation</p></li><li><p>status</p></li><li><p>add</p></li><li><p>commit</p></li><li><p>branch</p></li><li><p>tag</p></li><li><p>checkout</p></li><li><p>merge</p></li><li><p>clone</p></li><li><p>pull</p></li><li><p>push</p></li></ul></div></section><section id="_initialisation"><h2>initialisation</h2><div class="ulist"><ul><li><p>Create an empty Git repository or reinitialize an existing one</p></li><li><p>in the <strong>current</strong> directory</p></li><li><p><a href="http://git-scm.com/docs/git-init" class="bare">http://git-scm.com/docs/git-init</a></p></li></ul></div>
-<div class="paragraph"><p>code,bash-------- code,bash
-git init</p></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code>=== status
-
-* Show the working tree status
-* displays paths that have differences between the index file and the
-current HEAD commit
-* paths that have differences between the working tree and the index
-file
-* paths in the working tree that are not tracked by Git
-* http://git-scm.com/docs/git-status
-
-code,bash---------- code,bash
-git status
-----------
-
-=== add
-
-* updates the index using the current content found in the working tree,
-to prepare the content staged for the next commit
-* http://git-scm.com/docs/git-add
-
-code,bash---------------- code,bash
-git add FILENAME
-----------------
-
-code,bash--------------------------- code,bash
-git add FILENAME1 FILENAME2
----------------------------
-
-code,bash----------------- code,bash
-git add FILENAME*
------------------
-
-code,bash------------- code,bash
-git add *.png
--------------
-
-
-=== commit
-
-* Record changes to the repository
-* Stores the current contents of the index in a new commit along with a
-log message from the user describing the changes
-* http://git-scm.com/docs/git-commit
-
-code,bash----------------------------------------------- code,bash
-git commit #will then prompt for commit message
------------------------------------------------
-
-code,bash------------------------------------------ code,bash
-git commit -m "this is the commit message"
-------------------------------------------
-
-code,bash----------------------------------------------------------------------------
-code,bash
-git commit -a #automatically stage files that have been modified and deleted
-#but new files you have not told Git about are not affected.
-----------------------------------------------------------------------------
-
-
-=== branch
-
-* List, create, or delete branches
-* http://git-scm.com/docs/git-branch
-
-code,bash-------------------------------- code,bash
-git branch NewBranchName #create
---------------------------------
-
-code,bash---------------------------------- code,bash
-git branch -l #list local branches
-----------------------------------
-
-code,bash----------------------------------- code,bash
-git branch -r #list remote branches
------------------------------------
-
-code,bash--------------------------------------------- code,bash
-git branch -d BranchToDelete #delete a branch
----------------------------------------------
-
-
-=== tag
-
-* Create, list, delete or verify a tag object signed with GPG
-* http://git-scm.com/docs/git-tag
-
-code,bash------------------ code,bash
-git tag NewTagName
-------------------
-
-code,bash-------------------------- code,bash
-git tag -d TagNameToDelete
---------------------------
-
-=== checkout
-
-* Checkout a branch or paths to the working tree
-* http://git-scm.com/docs/git-checkout
-
-code,bash----------------------------- code,bash
-git checkout BranchToCheckout
------------------------------
-
-code,bash-------------------------- code,bash
-git checkout TagToCheckout
---------------------------
-
-code,bash-------------------------------------------- code,bash
-git checkout -b NewBranchToCreateAndCheckout
---------------------------------------------
-
-
-=== merge
-
-* Join two or more development histories together
-* http://git-scm.com/docs/git-merge
-* may lead to merge conflicts
-
-code,bash---------------------------------------------------- code,bash
-git merge BranchX #Merge BranchX into present branch
-----------------------------------------------------
-
-
-=== clone
-
-* Clone a repository into a new directory
-* http://git-scm.com/docs/git-clone
-* automatically sets up the `remote`
-
-code,bash-----------------------------------------------------------------
-code,bash
-git clone https://github.com/shearer12345/softwareEngineering.git
+<section><section id="_version_control_just_for_source_code"><h2>Version Control - Just for source code?</h2><div class="ulist"><ul><li><p><strong>NO</strong></p></li><li><p>also:</p><div class="ulist"><ul><li><p>documentation</p></li><li><p>configuration files</p></li><li><p>assets</p></li></ul></div></li></ul></div></section><section id="_version_control_just_for_source_code_2"><h2>Version Control - Just for source code?</h2><div class="ulist"><ul><li><p>In fact, this presentation is in git, hosted on github</p></li><li><p>hosted at: <a href="http://shearer12345.github.io/softwareEngineering" class="bare">http://shearer12345.github.io/softwareEngineering</a></p></li><li><p>source at: <a href="https://github.com/shearer12345/softwareEngineering" class="bare">https://github.com/shearer12345/softwareEngineering</a></p></li></ul></div></section></section>
+<section id="_version_control_issues_with_non_text_content"><h2>Version Control - Issues with non-text content?</h2><div class="ulist"><ul><li><p>version control systems store changes to files efficiently</p></li><li><p>by <strong>"diff&#8217;ing"</strong> the files</p></li><li><p>finding what&#8217;s changed between one and another</p></li><li><p>very effective for text files</p></li><li><p>arbitrarily hard for binary file types</p></li><li><p>e.g. images</p></li></ul></div></section>
+<section><section id="_actions_in_version_control"><h2>Actions in Version Control</h2><div class="ulist"><ul><li><p>initialisation</p></li><li><p>status</p></li><li><p>add</p></li><li><p>commit</p></li><li><p>branch</p></li></ul></div></section><section id="_actions_in_version_control_2"><h2>Actions in Version Control 2</h2><div class="ulist"><ul><li><p>tag</p></li><li><p>checkout</p></li><li><p>merge</p></li><li><p>clone</p></li><li><p>pull</p></li><li><p>push</p></li></ul></div></section><section id="_initialisation"><h2>initialisation</h2><div class="ulist"><ul><li><p>Create an empty Git repository or reinitialize an existing one</p></li><li><p>in the <strong>current</strong> directory</p></li><li><p><a href="http://git-scm.com/docs/git-init" class="bare">http://git-scm.com/docs/git-init</a></p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git init</code></pre></div></div></section><section id="_status"><h2>status</h2><div class="ulist"><ul><li><p>Show the working tree status</p></li><li><p>displays paths that have differences between the index file and the
+current HEAD commit</p></li><li><p>paths that have differences between the working tree and the index
+file</p></li><li><p>paths in the working tree that are not tracked by Git</p></li><li><p><a href="http://git-scm.com/docs/git-status" class="bare">http://git-scm.com/docs/git-status</a></p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git status</code></pre></div></div></section><section id="_add"><h2>add</h2><div class="ulist"><ul><li><p>updates the index using the current content found in the working tree,
+to prepare the content staged for the next commit</p></li><li><p><a href="http://git-scm.com/docs/git-add" class="bare">http://git-scm.com/docs/git-add</a></p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git add FILENAME</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git add FILENAME1 FILENAME2</code></pre></div></div></section><section id="_add_2"><h2>add 2</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git add FILENAME*</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git add *.png</code></pre></div></div></section><section id="_commit"><h2>commit</h2><div class="ulist"><ul><li><p>Record changes to the repository</p></li><li><p>Stores the current contents of the index in a new commit along with a
+log message from the user describing the changes</p></li><li><p><a href="http://git-scm.com/docs/git-commit" class="bare">http://git-scm.com/docs/git-commit</a></p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git commit #will then prompt for commit message</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git commit -m "this is the commit message"</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git commit -a #automatically stage files that have been modified and deleted
+#but new files you have not told Git about are not affected.</code></pre></div></div></section><section id="_branch"><h2>branch</h2><div class="ulist"><ul><li><p>List, create, or delete branches</p></li><li><p><a href="http://git-scm.com/docs/git-branch" class="bare">http://git-scm.com/docs/git-branch</a></p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git branch NewBranchName #create</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git branch -l #list local branches</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git branch -r #list remote branches</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git branch -d BranchToDelete #delete a branch</code></pre></div></div></section><section id="_tag"><h2>tag</h2><div class="ulist"><ul><li><p>Create, list, delete or verify a tag object signed with GPG</p></li><li><p><a href="http://git-scm.com/docs/git-tag" class="bare">http://git-scm.com/docs/git-tag</a></p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git tag NewTagName</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git tag -d TagNameToDelete</code></pre></div></div></section><section id="_checkout"><h2>checkout</h2><div class="ulist"><ul><li><p>Checkout a branch or paths to the working tree</p></li><li><p><a href="http://git-scm.com/docs/git-checkout" class="bare">http://git-scm.com/docs/git-checkout</a></p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git checkout BranchToCheckout</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git checkout TagToCheckout</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git checkout -b NewBranchToCreateAndCheckout</code></pre></div></div></section><section id="_merge"><h2>merge</h2><div class="ulist"><ul><li><p>Join two or more development histories together</p></li><li><p><a href="http://git-scm.com/docs/git-merge" class="bare">http://git-scm.com/docs/git-merge</a></p></li><li><p>may lead to merge conflicts</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git merge BranchX #Merge BranchX into present branch</code></pre></div></div></section><section id="_clone"><h2>clone</h2><div class="ulist"><ul><li><p>Clone a repository into a new directory</p></li><li><p><a href="http://git-scm.com/docs/git-clone" class="bare">http://git-scm.com/docs/git-clone</a></p></li><li><p>automatically sets up the <code>remote</code></p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git clone https://github.com/shearer12345/introToGit.git
   #clone this lecture
-  #will get the content, but not the submodule for reveal.js
-  #so won't work as a presentation
------------------------------------------------------------------
-
-code,bash-----------------------------------------------------------------------------
-code,bash
-git clone --recursive https://github.com/shearer12345/softwareEngineering.git
-  #clone this lecture, clone submodules also
------------------------------------------------------------------------------
-
-
-=== pull
-
-* Fetch from and integrate with another repository or a local branch
-* http://git-scm.com/docs/git-pull
-* incorporates changes from a remote repository into the current branch
-* in default mode, git pull is shorthand for
-** `git fetch`
-** followed by `git merge FETCH_HEAD`
-
-code,bash-------- code,bash
-git pull</code></pre></div></div>
-<div class="paragraph"><p>code,bash--------------------------------------------------- code,bash
-git pull origin #pull from the remote called origin</p></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code>=== push
-
-* Update remote refs along with associated objects
-* http://git-scm.com/docs/git-push
-
-code,bash-------- code,bash
-git push
---------
-
-code,bash------------------------------------------------- code,bash
-git push origin #push to the remote called origin
-  #will need enough rights for this
--------------------------------------------------
-
-
-== When to commit?
-
-* commit often
-* commit after reaching some logical milestone
-* commit at least everyday
-* or better, break up your work into smaller chunks
-
-
-== Live Demo</code></pre></div></div></section></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+  #will get the content, but not the submodules
+  #so won't work as a presentation</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git clone --recursive https://github.com/shearer12345/introToGit.git
+  #clone this lecture, clone submodules also</code></pre></div></div></section><section id="_pull"><h2>pull</h2><div class="ulist"><ul><li><p>Fetch from and integrate with another repository or a local branch</p></li><li><p><a href="http://git-scm.com/docs/git-pull" class="bare">http://git-scm.com/docs/git-pull</a></p></li><li><p>incorporates changes from a remote repository into the current branch</p></li><li><p>in default mode, git pull is shorthand for</p><div class="ulist"><ul><li><p><code>git fetch</code></p></li><li><p>followed by <code>git merge FETCH_HEAD</code></p></li></ul></div></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git pull</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git pull origin #pull from the remote called origin</code></pre></div></div></section><section id="_push"><h2>push</h2><div class="ulist"><ul><li><p>Update remote refs along with associated objects</p></li><li><p><a href="http://git-scm.com/docs/git-push" class="bare">http://git-scm.com/docs/git-push</a></p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git push</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">git push origin #push to the remote called origin
+  #will need enough rights for this</code></pre></div></div></section></section>
+<section id="_when_to_commit"><h2>When to commit?</h2><div class="ulist"><ul><li><p>commit often</p></li><li><p>commit after reaching some logical milestone</p></li><li><p>commit at least everyday</p></li><li><p>or better, break up your work into smaller chunks</p></li></ul></div></section>
+<section id="_live_demo"><h2>Live Demo</h2></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
 Reveal.initialize({
   // Display controls in the bottom right corner
   controls: true,
