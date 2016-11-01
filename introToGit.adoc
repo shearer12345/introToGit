@@ -369,5 +369,65 @@ git push origin #push to the remote called origin
 * commit at least everyday
 * or better, break up your work into smaller chunks
 
+== Git Cheatsheats
+
+* https://rawgit.com/pastjean/git-cheat-sheet/master/git-cheat-sheet.svg
+* https://appendto.com/2015/06/making-sense-of-git-a-visual-perspective/
+* http://ndpsoftware.com/git-cheatsheet.html
+* https://zeroturnaround.com/wp-content/uploads/2016/05/Git-Cheat-Sheet-by-RebelLabs.png
+
+=== Git Cheatsheats 2
+
+[.stretch]
+image::https://rawgit.com/pastjean/git-cheat-sheet/master/git-cheat-sheet.svg[link=https://rawgit.com/pastjean/git-cheat-sheet/master/git-cheat-sheet.svg]
+
+=== Git Cheatsheats 3
+
+[.stretch]
+image::https://zeroturnaround.com/wp-content/uploads/2016/05/Git-Cheat-Sheet-by-RebelLabs.png[link=https://zeroturnaround.com/wp-content/uploads/2016/05/Git-Cheat-Sheet-by-RebelLabs.png]
+
+=== Git Cheatsheats 4
+
+[.stretch]
+image::http://www.volkerschatz.com/unix/pics/gitsheet.svg[link=http://www.volkerschatz.com/unix/gitsheet.html]
+
+=== Git Cheatsheats 5
+
+[.stretch]
+image::https://raw.githubusercontent.com/wiki/ardissoebrata/ci-beam/git-diagram.png[link=https://github.com/ardissoebrata/ci-beam/wiki/Git-Cheatsheet-with-Illustrations]
+
+== Git GUIs
+
+* https://desktop.github.com/[GitHub Desktop]
+* https://www.sourcetreeapp.com/[SourceTree]
+* https://gitextensions.github.io/[Git Extensions]
+* http://www.collab.net/products/giteye[GitEye]
+* https://tortoisegit.org/[Tortoise Git]
+* https://www.gitkraken.com/[GitKraken]
+* https://github.com/FredrikNoren/ungit[ungit]
+
+NOTE: an incomplete list
+
+=== Git GUIs 2
+
+* See also:
+  ** https://git-scm.com/downloads/guis
+  ** https://about.gitlab.com/applications/
 
 == Live Demo
+
+* ...
+
+
+== Issue tracking, discussion and project management
+
+* git *just* does versioning
+* various cloud-providers also provide other features
+  ** (gitlab, github, bitbucket, atlassian)
+  ** Issue tracking and discussion
+  ** Project management
+
+== Etiquette
+
+
+== Some example github repositories with interesting issues
