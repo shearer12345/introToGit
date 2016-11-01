@@ -418,7 +418,6 @@ NOTE: an incomplete list
 
 * ...
 
-
 == Issue tracking, discussion and project management
 
 * git *just* does versioning
@@ -427,7 +426,25 @@ NOTE: an incomplete list
   ** Issue tracking and discussion
   ** Project management
 
+== Continuous Integration etc
+
+* travis CI
+* jenkins
+
+== Work-flow
+
+* Feature branches
+* Git-Flow
+* Production questions??
+* Releases
+
+
 == Etiquette
 
 
 == Some example github repositories with interesting issues
+
+* https://github.com/KhronosGroup/glTF/issues
+* https://github.com/g-truc/glm/issues
+* https://github.com/tensorflow/tensorflow/issues
+* https://github.com/pybind/pybind11/issues
