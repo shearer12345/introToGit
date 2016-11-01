@@ -8,7 +8,7 @@ import time
 
 from threading import Thread
 
-fileSuffix = '.asciidoc'
+fileSuffix = '.adoc'
 clearTuple = ('.html')
 
 
@@ -18,7 +18,7 @@ def silentremove(filename):
     except OSError as e:
         if e.errno != errno.ENOENT: # errno.ENOENT = no such file or directory
             raise # re-raise exception if a different error occured
-            
+
 def clearDirectory(dir):
     for file in os.listdir(dir):
         if file.endswith(clearTuple):
@@ -38,7 +38,7 @@ def buildDirectory(dir, reveal=True, pdfReveal=False, purePdf=False):
             #pdfFileName = os.path.join(dir, fileNameWithoutSuffix + '.pdf')
             #purePdfFileName = os.path.join(dir, fileNameWithoutSuffix + '_pure.pdf')
             #webtexFileName = os.path.join(dir, fileNameWithoutSuffix + '_webtex.html')
-            
+
             if reveal:
                 #os.system('asciidoctor -T asciidoctor-reveal.js/templates/slim/ ' + file)
                 proc = subprocess.Popen(['asciidoctor -T asciidoctor-reveal.js/templates/slim/ ' + file], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
@@ -49,14 +49,14 @@ def buildDirectory(dir, reveal=True, pdfReveal=False, purePdf=False):
                 if len(err) > 0:
 #                    print "program errors:", err
                     pass
-                
+
 #            if purePdf:
 #                os.system(pandocBin + ' ' + '-s ' + file + ' -o ' + purePdfFileName + ' -t latex')
-#            
+#
 #            #pdf of reveal
 #            if pdfReveal:
 #                phantomString = 'phantomjs ./reveal.js/plugin/print-pdf/print-pdf.js ' + 'http://localhost:8000/' + fileNameWithoutSuffix + '.html' + '?print-pdf#/ ' + pdfFileName
 #                os.system(phantomString)
-                
+
 clearDirectory('.')
 buildDirectory('.')
