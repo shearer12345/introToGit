@@ -361,6 +361,11 @@ git push origin #push to the remote called origin
   #will need enough rights for this
 ----
 
+=== rebase
+
+* Reapply commits on top of another base tip
+  ** an active repository has probably changed since you started your work.
+  ** Rebase makes it as though your commit happen on a later tip than you started on
 
 == When to commit?
 
@@ -435,11 +440,14 @@ NOTE: an incomplete list
 
 * Feature branches
 * Git-Flow
-* Production questions??
+* Production questions
 * Releases
 
 
 == Etiquette
+
+* DOs and DON'Ts
+* Contribution guidelines
 
 
 == Some example github repositories with interesting issues
@@ -448,3 +456,5 @@ NOTE: an incomplete list
 * https://github.com/g-truc/glm/issues
 * https://github.com/tensorflow/tensorflow/issues
 * https://github.com/pybind/pybind11/issues
+* https://github.com/atom/atom/issues
+* https://github.com/Microsoft/vscode/issues
