@@ -22,7 +22,8 @@ def silentremove(filename):
 def clearDirectory(dir):
     for file in os.listdir(dir):
         if file.endswith(clearTuple):
-            os.remove(os.path.join(dir, file))
+            if not file.startswith('index'):
+                os.remove(os.path.join(dir, file))
 
 def buildDirectory(dir, reveal=True, pdfReveal=False, purePdf=False):
 
