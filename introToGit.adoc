@@ -1,4 +1,4 @@
-= Introduction to Git
+= Introduction to Software Versioning and collaboration tools - git and GitHub
 
 == Software Versioning - What is it?
 
@@ -100,11 +100,22 @@ http://stackoverflow.com/questions/1408450/why-should-i-use-version-control
   ** team management
   ** continuous integration
 
+== Git vs. GitHub
+
+* *git* is the versioning tool
+* *github* is a website that supports collaboration and software versioning
+  ** based around the tool *git*
+* i.e. they are different things
+  ** *git* is like a hammer
+  ** *github* is like a toolbox, that happens to have a hammer in it
+  ** you can use the hammer without the toolbox, or with another toolbox
+  ** it's important to see the difference, and be clear when you talk about it
+
 
 == GitHub Student Developer Pack
 
 * https://education.github.com/pack
-* five private repositories while you're a student
+* unlimited private repositories while you're a student
 * and bunch of other tools
 
 
